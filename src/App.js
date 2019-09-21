@@ -1,20 +1,20 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { useSpring, animated } from "react-spring";
 import {
+  Button,
+  Chip,
   Container,
   CssBaseline,
-  TextField,
-  Button,
-  SvgIcon,
-  Select,
-  MenuItem,
   FormControl,
+  Grid,
   InputLabel,
   makeStyles,
-  Typography,
-  Grid,
-  Chip
+  MenuItem,
+  Select,
+  SvgIcon,
+  TextField,
+  Typography
 } from "@material-ui/core/";
+import React, { useCallback, useState } from "react";
+import { animated, useSpring } from "react-spring";
 const CHOOSE_INPUT_PROPS = {
   id: "choose-helper"
 };
@@ -33,11 +33,6 @@ const App = props => {
     reset: true,
     onRest: () => setSpinning(false)
   });
-  // useEffect(() => {
-  //   if (isSpinning) {
-  //     setTimeout(() => setSpinning(false), 1000);
-  //   }
-  // }, [isSpinning]);
 
   const classes = useStyles();
   const [name, setName] = useState("");
@@ -46,7 +41,7 @@ const App = props => {
   const [choose, setChoose] = useState(0);
 
   const canAdd = !!name.trim();
-  const spinnable = !!choose;
+  const spinnable = !!choose && !isSpinning;
 
   const changeName = useCallback(e => setName(e.target.value), []);
   const changeChosen = useCallback(e => setChoose(e.target.value), []);

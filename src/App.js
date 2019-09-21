@@ -93,12 +93,12 @@ const App = props => {
             加入
           </Button>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography component="h1" variant="h5">
             選項:
           </Typography>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={9}>
           {names.map((n, i) => (
             <Chip label={n} key={n + i}></Chip>
           ))}
@@ -137,12 +137,12 @@ const App = props => {
             </SvgIcon>
           </animated.div>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography component="h1" variant="h5">
             結果
           </Typography>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={9}>
           {!isSpinning &&
             results.map((n, i) => (
               <Chip color="primary" label={n} key={n + i}></Chip>
